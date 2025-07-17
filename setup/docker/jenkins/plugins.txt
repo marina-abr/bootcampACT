@@ -4,3 +4,4 @@ blueocean
 git
 github
 matrix-auth
+prometheus
