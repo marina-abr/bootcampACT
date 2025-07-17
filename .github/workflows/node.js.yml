@@ -1,7 +1,4 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
+name: gate
 
 on:
   push:
@@ -27,7 +24,7 @@ jobs:
     - run: node getPokemon/test.js
       working-directory: ./api
     - run: |
-        func start --verbose &
+        npx func start --verbose &
         sleep 10
         pushd ../test/api
         npm run test:bruno
