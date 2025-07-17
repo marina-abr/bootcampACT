@@ -1,0 +1,34 @@
+# Ansible retry files
+*.retry
+
+# SSH key files (if stored locally — be cautious!)
+*.pem
+*.key
+
+# Vault password files
+.vault_pass.txt
+
+# Inventory files with sensitive data
+inventory/*.ini
+inventory/*.yml
+inventory/*.yaml
+
+# Roles downloaded via ansible-galaxy
+roles/*/
+!roles/requirements.yml
+
+# Logs
+*.log
+
+# Python cache (if using Ansible with Python scripts)
+__pycache__/
+*.py[cod]
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+.DS_Store

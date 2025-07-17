@@ -1,0 +1,27 @@
+
+- name: Jenkins Client Setup
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure OpenJDK 17 is installed
+      apt:
+        name: openjdk-17-jre
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install dependencies for Terraform
+      apt:
+        name:
+          - wget
+          - unzip
+        state: present
+      when: ansible_os_family == 'Debian'
+
+    - name: Install Terraform
+      shell: |
+        wget -q https://releases.hashicorp.com/terraform/1.8.5/terraform_1.8.5_linux_amd64.zip -O /tmp/terraform.zip
+        unzip -o /tmp/terraform.zip -d /usr/local/bin/
+        chmod +x /usr/local/bin/terraform
+      args:
+        creates: /usr/local/bin/terraform
+      when: ansible_os_family == 'Debian'

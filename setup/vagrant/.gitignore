@@ -1,0 +1,31 @@
+# Vagrant box files and logs
+.vagrant/
+*.box
+*.log
+
+# SSH private keys
+*.pem
+*.key
+
+# Virtual machine disk images
+*.vdi
+*.vmdk
+*.vhd
+*.qcow2
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+.DS_Store
+
+# Environment files
+.env
+.env.*
+
+# Optional: ignore provisioning scripts output
+*.out
+*.retry
