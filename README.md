@@ -71,19 +71,58 @@ Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Sta
 **Ziel:** App in Azure deployen & überwachen.
 
 - ☁️ **Azure Setup**
-  - Azure-Konto erstellen
-  - Funktion manuell deployen & im Browser testen
+  - Azure-Konto erstellen (auf https://portal.azure.com/#home)
+  - Startet einen `Azure Free Trial` (200$ inklusive)
+  - Funktion manuell deployen (Azure Function App, Wes Europa) & im Browser testen
+  - wenn alles funktioniert, wieder aufräumen/löschen
 
 - 🚀 **Jenkins Deployment Jobs**
-  - Job: Azure Function via Terraform deployen
+  - Job: Azure Function via Terraform deployen (Achtung: State File)
     - Letzten Git-Commit verwenden
-    - Endpoint mit `curl` testen
-  - Job: Azure Function löschen
+    - Endpoint mit `curl` testen und status an Jenkins zurückmelden
+  - Job: Azure Function löschen anlegen (auch Terraform)
 
 - 🧪 **Umgebungen verwalten**
-  - Deployment-Slots für `dev` & `prod` nutzen
-  - Deploy/Delete-Jobs konfigurierbar machen
+  - Deployment-Slots für `dev` & `prod` nutzen (für die Function App)
+  - Deploy/Delete-Jobs konfigurierbar machen für die Umgebungen
 
 - 🔍 **Application Insights**
   - Beim Deployment aktivieren
   - Logs & Graphen in Azure Portal prüfen
+
+
+---
+
+## Wissenswertes
+
+### Videos
+
+| 🎥 **Kursname**                                                       | 🔗 **URL**                                                                                   | 🎯 **Fokus im Bootcamp**                                      |
+|----------------------------------------------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| GitHub Actions – The Complete Guide                                  | https://capgemini.udemy.com/course/github-actions-the-complete-guide/ | Git-Crashkurs, Basics, Events                                 |
+| AZ-900: Microsoft Azure Fundamentals                                 | https://capgemini.udemy.com/course/az900-azure/ | Allgemeines Verständnis, Compute & Storage                    |
+| Jenkins Masterclass                                                  | https://capgemini.udemy.com/course/jenkins-masterclass/ | Komplett durchgehen                                           |
+| Learn Ansible                                                        | https://capgemini.udemy.com/course/learn-ansible/ | Komplett durchgehen                                           |
+| Terraform for the Absolute Beginners                                | https://capgemini.udemy.com/course/terraform-for-the-absolute-beginners/ | Komplett durchgehen                                           |
+| Learn Docker                                                         | https://capgemini.udemy.com/course/learn-docker/ | Ohne Swarm & Kubernetes                                       |
+| Dive into Cloud Native: Containers, Kubernetes & KCNA               | https://capgemini.udemy.com/course/dive-into-cloud-native-containers-kubernetes-and-the-kcna/ | Ohne Docker & Kubernetes     |
+
+### Weitere Informationen:
+
+| 🛠️ **Tool**                        | 🔗 **Offizielle Dokumentation / Info**                                                                 |
+|------------------------------------|--------------------------------------------------------------------------------------------------------|
+| **GitHub Actions**                 | [https://docs.github.com/en/actions](https://docs.github.com/en/actions)                              |
+| **Dependabot**                     | [https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically) |
+| **Azure Functions**                | [https://learn.microsoft.com/en-us/azure/azure-functions/](https://learn.microsoft.com/en-us/azure/azure-functions/) |
+| **Azure Functions Core Tools**     | [https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local) |
+| **Bruno (API Testing)**            | [https://github.com/usebruno/bruno](https://github.com/usebruno/bruno)                                |
+| **Docker Compose**                 | [https://docs.docker.com/compose/](https://docs.docker.com/compose/)                                  |
+| **Jenkins**                        | https://www.jenkins.io/doc/                                            |
+| **Ansible**                        | https://docs.ansible.com/                                                |
+| **WSL2 (Windows Subsystem for Linux)** | [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install) |
+| **Terraform**                      | [https://developer.hashicorp.com/terraform/docs](https://developer.hashicorp.com/terraform/docs)      |
+| **Portainer**                      | https://docs.portainer.io/                                              |
+| **Prometheus**                     | https://prometheus.io/docs/introduction/overview/ |
+| **Grafana**                        | https://grafana.com/docs/                                                |
+| **Azure Portal**                   | https://portal.azure.com/#home                                      |
+| **Application Insights**           | https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview |

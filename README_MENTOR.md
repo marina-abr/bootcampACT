@@ -90,6 +90,26 @@ sudo apt install ansible -y
 
 ---
 
+### Azure
+- Function App erzeugen mit Scale to Zero (erste Plan geht nicht, weil nicht im Free-Tier enthalten)
+- StorageAccount anlegen und mit Function App verknüpfen
+- ```
+  $ az storage account show-connection-string   --name bootcamppoke   --resource-group bootcamp   --query connectionString   --output tsv
+  DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=bootcamppoke;AccountKey=uJv8o0qr6B+1V2kqc+EmYxUOTFiUv4EJX3VvONnFaB0C6PjY1HYSvBqrcKMcpYYOZnKaoA9H4Nmz+AStDQCjDA==;BlobEndpoint=https://bootcamppoke.blob.core.windows.net/;FileEndpoint=https://bootcamppoke.file.core.windows.net/;QueueEndpoint=https://bootcamppoke.queue.core.windows.net/;TableEndpoint=https://bootcamppoke.table.core.windows.net/
+
+  az functionapp config appsettings set \
+  --name bootcamp-pokemon \
+  --resource-group bootcamp \
+  --settings AzureWebJobsStorage="DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=bootcamppoke;AccountKey=uJv8o0qr6B+1V2kqc+EmYxUOTFiUv4EJX3VvONnFaB0C6PjY1HYSvBqrcKMcpYYOZnKaoA9H4Nmz+AStDQCjDA==;BlobEndpoint=https://bootcamppoke.blob.core.windows.net/;FileEndpoint=https://bootcamppoke.file.core.windows.net/;QueueEndpoint=https://bootcamppoke.queue.core.windows.net/;TableEndpoint=https://bootcamppoke.table.core.windows.net/"
+  ```
+
+  Über VSCode Plugin deployen ist super einfach dann.
+
+
+### Automatisches Deployment mit Terraform
+
+Todo
+
 ### ✅ **Optional: Tipps für Mentoren**
 - 🔄 **Vorbereitung:** Teste das Setup vorher selbst durch (inkl. WSL2 & Docker)
 - 🧯 **Fehlerquellen:** Docker nicht gestartet, Ports belegt, falsche Secrets
