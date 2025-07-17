@@ -15,11 +15,9 @@ Your team has been hired by a startup that built a small backend service fetchin
 - Architecture brainstorming and role assignment
 
 #### **Afternoon: Local Infrastructure Setup**
-- Use **Vagrant** to spin up lightweight **Ubuntu VMs** with **bridged networking**
+- Use WSL2
 - Use **Ansible** to:
-  - Install Docker and Docker Compose
-  - Initialize **Docker Swarm** across VMs
-  - Deploy **Portainer** for Swarm management
+  - install jre and terraform and run jenkins agent
 - Set up shared GitHub repo and project board
 
 ---
@@ -27,7 +25,7 @@ Your team has been hired by a startup that built a small backend service fetchin
 ### **🟡 Day 2 – CI & Testing**
 
 #### **Morning: App Setup & Testing**
-- Containerize the Pokémon API web service (Java backend)
+- run backend app
 - Write **Bruno** API tests
 - Add **Dependabot** to GitHub for Maven dependency updates
 
@@ -35,7 +33,6 @@ Your team has been hired by a startup that built a small backend service fetchin
 - Create a **GitHub Actions workflow** to:
   - Build the app with Maven
   - Run unit tests and Bruno API tests
-  - Lint or static analysis (optional)
 - Ensure test results are visible in PRs
 
 ---
@@ -43,15 +40,14 @@ Your team has been hired by a startup that built a small backend service fetchin
 ### **🟠 Day 3 – Monitoring & Observability**
 
 #### **Morning: Jenkins Setup**
-- Deploy **Jenkins** in Docker Swarm
+- Deploy **Jenkins** in Docker compose
 - Configure Jenkins for **manual deployments only**
 - Add Prometheus metrics endpoint to Jenkins
 
 #### **Afternoon: Monitoring Stack**
-- Deploy **Prometheus**, **Grafana**, and **cAdvisor** in Swarm
+- Deploy **Prometheus**, **Grafana** in compose
 - Configure Prometheus to scrape:
   - Jenkins metrics
-  - cAdvisor container metrics
 - Build Grafana dashboards for Jenkins and app containers
 - Use **Portainer** to inspect services and logs
 
