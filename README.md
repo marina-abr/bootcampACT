@@ -110,7 +110,7 @@ Your team has been hired by a startup that built a small backend service fetchin
 
 ---
 
-- scoop install nodejs-lts azure-functions-core-tools vagrant vscode terraform
+- scoop install nodejs-lts azure-functions-core-tools vagrant vscode terraform bruno
 - Docker Desktop (WSL2)
 
 wsl --install -d Ubuntu (username und password vergeben)  --> wsl -d Ubuntu
@@ -137,10 +137,11 @@ java -jar agent.jar -url http://localhost:8080/ -secret cfd885525107af272f59d56b
   - run the test locally
     - play with it
 - basic CI/CD
-  - add github action that tries builing the app on every PR
+  - add github action that runs the tests of the app on every PR
   - reject PRs only if build works
   - add dependabot to automatically check for NPM updates and let it automatically create PRs
 - tests
+  - try running the app as an Azure Funtion locally (azure-functions-core-tools)
   - write api tests with bruno 1-2, e.g. for pikachu and charmander
   - run them locally with ui
   - run them locally wheadless over CLI
@@ -168,7 +169,6 @@ Observability:
   - add grafana to your compose
     - display metrics collected by prometheus
 Deployment/Cloud:
-  - try running the app as an Azure Funtion locally (azure-functions-core-tools)
   - get an Azure account
     - deploy the function manually ad try accessing it  with your browser over internet 
   - add a jenkins job to deploy the app as an Azure Function (serverless) with manual trigger only

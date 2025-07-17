@@ -1,0 +1,29 @@
+meta {
+  name: getCharmander
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:7071/api/getPokemon?name=charmander
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: charmander
+}
+
+tests {
+  test("should return charmander data", function () {
+    expect(res.getStatus()).to.equal(200);
+  
+    const body = res.getBody();
+    expect(body).to.have.property("name", "charmander");
+    expect(body).to.have.property("id", 4);
+    expect(body).to.have.property("height", 6);
+    expect(body).to.have.property("weight", 85);
+    expect(body).to.have.property("base_experience", 62);
+    expect(body).to.have.property("types").that.eql(["fire"]);
+  });
+}

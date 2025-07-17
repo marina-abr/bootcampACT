@@ -26,3 +26,9 @@ jobs:
       working-directory: ./api
     - run: node getPokemon/test.js
       working-directory: ./api
+    - run: |
+        func start --verbose &
+        sleep 10
+        pushd ../test/api
+        npm run test:bruno
+      working-directory: ./api
