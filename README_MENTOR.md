@@ -13,7 +13,7 @@ scoop install nodejs-lts azure-functions-core-tools vagrant vscode terraform bru
 
 ---
 
-### 🐧 **2. WSL2 mit Ubuntu einrichten**
+### 🐧 **2. WSL2 mit Ubuntu einrichten** --- oder direkt auf Linux
 ```bash
 wsl --install -d Ubuntu
 ```
@@ -24,6 +24,9 @@ wsl -d Ubuntu
 sudo apt update
 sudo apt install ansible -y
 ```
+
+Dann das entsprechende Ansible Playbook ausführen:
+- ansible-playbook -i inventory.ini jenkins-setup.yml -K
 
 ---
 

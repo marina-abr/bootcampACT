@@ -9,86 +9,54 @@ Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Sta
 ### Teamaufbau & App kennenlernen
 **Ziel:** Zusammenarbeit etablieren, App verstehen und lokal zum Laufen bringen.
 
-- 👥 **Team & Rollen**
-  - Überlegt euch, wie ihr zusammenarbeiten wollt
-  - Basis-Repository forken & Zugriff für alle einrichten
+- 👥 **Team**
+  - Überlegt euch wie ihr zusammenarbeiten und gemeinsam an derselben Code-Basis arbeiten wollt
 
 - 🧩 **App Setup**
-  - Repo klonen, Abhängigkeiten installieren (siehe api/README.md)
-  - Tests der App lokal ausführen
-  - Funktionen erkunden
+  - Schaut euch das Repository in Ruhe an
+  - erforscht die Funktionalität
+  - Lasst die Tests laufen
 
 - 🔁 **CI/CD Basics**
-  - GitHub Action: Tests bei jedem PR ausführen
-  - PRs ablehnen, wenn Tests fehlschlagen
-  - Dependabot aktivieren für automatische NPM-Updates
+  - Jede Änderung in eurem Code sollte eine automatische Überprüfung mit sich bringen; Es soll nichts integriert werden, was nicht funktioniert
+  - Aus Sicherheitsgründen habt ihr vom CTO die Aufgabe bekommen, dass alle benutzten Libs immer auf neustem Stand sein sollten. Natürlich völlig automatisiert!
 
 ### Testen & Azure Function lokal
 **Ziel:** App testen und lokal als Azure Function betreiben.
 
 - ⚙️ **Azure Function lokal**
-  - `azure-functions-core-tools` installieren
-  - App lokal als Azure Function starten
+  - App lokal als Azure Function starten, als würde sie in der Cloud laufen
 
-- 🧪 **API-Tests mit Bruno**
-  - Bruno: 
-  - 1–2 Tests schreiben (z. B. für Pikachu & Glumanda)
-  - Tests per UI & CLI (headless) ausführen
-  - Tests in GitHub Action integrieren (PR nur bei Erfolg zulassen)
+- 🧪 **API-Tests**
+  - 1–2 API-Tests schreiben (z. B. für Pikachu & Glumanda)
+  - Tests in CI integrieren (Änderungen nur bei Erfolg zulassen)
 
-### Jenkins & Containerisierung
-**Ziel:** Jenkins resilient & sicher in Docker betreiben.
+### CD, Containerisierung & CaC
+**Ziel:** Continuous Deployment vorbereiten & sicher betreiben.
 
-- 🐳 **Jenkins mit Docker Compose**
-  - Jenkins mit mehreren Replikas starten
-  - Automatische Konfiguration: Admin-User, Plugins
-  - Keine Secrests im Repository ablegen (beispielsweise über `.env`)
+- 🐳 **Jenkins und Container**
+  - Jenkins in Docker aufsetzen (so viel wie möglich bereits beim initialen Setup automatisieren)
+  - Keine Secrests im Repository ablegen
   - Kein Zugriff für anonyme Nutzer:innen erlauben
 
-- 🧰 **Node Setup mit Ansible**
-  - WSL2-Ubuntu lokal einrichten
-  - Ansible-Playbook: JRE & Terraform installieren
-  - Agent mit Jenkins verbinden
-  - Jenkins so konfigurieren, dass nur der Agent Jobs ausführt, der Master darf keine starten
-  - erstelle einen "Hello World" Job und überprüfe ob alles funktioniert
-  - verbindet mehrere PCs eures Teams mit demselben Jenkins-Master
+- 🧰 **Configuration as Code**
+  - Jenkins Warnungen entfernen
+  - mehrere Jenkins-Agents auf unterschiedlichen Geräten aufsetzen
+  - Jenkins-Agents notwendige Tools und Konfigurationen mittels Configuration as Code vornehmen (vorzugsweise Ansible, aber nicht zwingend)
 
 ### Observability & Monitoring
 **Ziel:** Logs & Metriken sichtbar machen.
 
-- 📦 **Portainer**
-  - In Docker Compose integrieren
-  - Jenkins-Logs & Containerstatus einsehen
-
-- 📊 **Prometheus & Grafana**
-  - Prometheus in Compose integrieren
-  - Prometheus-Plugin in Jenkins installieren
-  - Jenkins-Metriken scrapen
+  - Jenkins-Metriken mit Prometheus einsammeln
   - Grafana-Dashboard für Metriken erstellen
-  - Logs von Prometheus & Grafana in Portainer prüfen
+  - Logs von Prometheus & Grafana & Jenkins in Portainer prüfen
 
 ### Deployment & Cloud Monitoring
 **Ziel:** App in Azure deployen & überwachen.
 
-- ☁️ **Azure Setup**
-  - Azure-Konto erstellen (auf https://portal.azure.com/#home)
-  - Startet einen `Azure Free Trial` (200$ inklusive)
-  - Funktion manuell deployen (Azure Function App, Wes Europa) & im Browser testen
-  - wenn alles funktioniert, wieder aufräumen/löschen
-
-- 🚀 **Jenkins Deployment Jobs**
-  - Job: Azure Function via Terraform deployen (Achtung: State File)
-    - Letzten Git-Commit verwenden
-    - Endpoint mit `curl` testen und status an Jenkins zurückmelden
-  - Job: Azure Function löschen anlegen (auch Terraform)
-
-- 🧪 **Umgebungen verwalten**
-  - Deployment-Slots für `dev` & `prod` nutzen (für die Function App)
-  - Deploy/Delete-Jobs konfigurierbar machen für die Umgebungen
-
-- 🔍 **Application Insights**
-  - Beim Deployment aktivieren
-  - Logs & Graphen in Azure Portal prüfen
+- Die App als Azure Function deployen
+  - über Jenkins, nur manuell getriggert
+- Metriken der App analysieren
 
 
 ---
