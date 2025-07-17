@@ -21,6 +21,8 @@ jobs:
       with:
         node-version: v22.17.1
         cache: 'npm'
+        cache-dependency-path: ./api/package-lock.json
     - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      working-directory: ./api
+    - run: node getPokemon/test.js
+      working-directory: ./api
