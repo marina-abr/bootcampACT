@@ -27,5 +27,6 @@ jobs:
         npx func start --verbose --javascript &
         sleep 10
         pushd ../test/api
+        npm ci
         npm run test:bruno
       working-directory: ./api
