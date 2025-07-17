@@ -24,7 +24,7 @@ jobs:
     - run: node getPokemon/test.js
       working-directory: ./api
     - run: |
-        npx func start --verbose &
+        npx func start --verbose --javascript &
         sleep 10
         pushd ../test/api
         npm run test:bruno
