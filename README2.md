@@ -4,6 +4,8 @@ Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Sta
 
 ---
 
+ACHTUNG: Nutze als Entwicklungsumgebung eine Azure B2PTS v2 (arm) VM. Es ist eine Kundenanforderung, dass die Software auf ARM-PC laufen muss. Außerdem kannst du nur so die IT-Richtlinien einhalten!
+
 ## 🗓️ **Bootcamp Agenda (5 Tage)**
 
 ### Teamaufbau & App kennenlernen
@@ -36,7 +38,7 @@ Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Sta
 
 - 🐳 **Jenkins und Container**
   - Jenkins in Docker aufsetzen (so viel wie möglich bereits beim initialen Setup automatisieren)
-  - Keine Secrests im Repository ablegen
+  - Keine Secrets im Repository ablegen
   - Kein Zugriff für anonyme Nutzer:innen erlauben
 
 - 🧰 **Configuration as Code**
@@ -49,7 +51,7 @@ Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Sta
 
   - Jenkins-Metriken mit Prometheus einsammeln
   - Grafana-Dashboard für Metriken erstellen
-  - Logs von Prometheus & Grafana & Jenkins in Portainer prüfen
+  - Logs von Prometheus & Grafana & Jenkins mit Portainer prüfen
 
 ### Deployment & Cloud Monitoring
 **Ziel:** App in Azure deployen & überwachen.
