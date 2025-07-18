@@ -1,13 +1,15 @@
 ## 🧪 **Use Case: PokéDelivery – Serverless Food für Pokémon**
 
-Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Start-up, das Pokémon in ganz Kanto mit frischem Sushi beliefert: natürlich serverless, resilient und CI/CD-ready. Doch um eure potentiellen Kunden besser kennenzulernen (Pikachu liebt Lachs!), braucht ihr erst einmal mehr Daten über sie. Ihr gehört zu dem Team, das eine App zur Datenbeschaffung bereitstellen soll (Das Dev Team hat eine Entwicklerversion bereits für euch zur Verfügung gestellt). Eure Aufgabe: Eine Plattform erstellen, mit der ihr Informationen über Pokemons abrufen könnt, mit einem Hauch von DevOps-Magie.
+Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Start-up, das Pokémon in ganz Kanto mit frischem Sushi beliefert: natürlich serverless, resilient und CI/CD-ready. Doch um eure potentiellen Kunden für Werbemaßnahmen besser kennenzulernen (Pikachu liebt Lachs!), braucht ihr erst einmal mehr Daten über sie. Ihr gehört zu dem Team, das eine App zur Datenbeschaffung bereitstellen soll. Eure Aufgabe: Eine Plattform erstellen, mit der ihr Informationen über Pokemons abrufen könnt, mit einem Hauch von DevOps-Magie.
 
 ---
 
 ## 📄 **Systemanforderungen – PokéDelivery**
 
+Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requirements 2` für euch zur Verfügung gestellt
+
 ### 1. **Systemumgebung**
-- Das System muss auf einer ARM-Gerät/VM (RaspberryPi oder B2PTS v2 VM) mit Ubuntu 22.04 LTS betrieben werden können.
+- Das System muss auf einem ARM-Gerät/VM (RaspberryPi oder B2PTS v2 VM) mit Ubuntu 22.04 LTS betrieben werden können.
 - Alle eingesetzten Softwarekomponenten (z. B. Jenkins, Docker) müssen ARM64-kompatibel sein.
 
 ---
