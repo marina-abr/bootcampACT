@@ -63,3 +63,7 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 - Die Anwendung muss über Jenkins manuell in Azure deploybar sein.
 - Das Deployment erfolgt Terraform.
 - Die Anwendung muss Metriken bereitstellen, die über Azure Application Insights analysierbar sind.
+
+### 9. Dokumentation
+- Eine Dokumentation der Architektur soll vorliegen.
+- Eine Entwickler Dokumentation soll vorliegen.
