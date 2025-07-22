@@ -103,9 +103,9 @@ Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Sta
 | AZ-900: Microsoft Azure Fundamentals                                 | https://capgemini.udemy.com/course/az900-azure/ | gern komplett, Fokus auf Allgemeines Verständnis, Compute & Storage                    |
 | Jenkins Masterclass                                                  | https://capgemini.udemy.com/course/jenkins-masterclass/ | Komplett durchgehen                                           |
 | Learn Ansible                                                        | https://capgemini.udemy.com/course/learn-ansible/ | Komplett durchgehen                                           |
-| Terraform for the Absolute Beginners                                | https://capgemini.udemy.com/course/terraform-for-the-absolute-beginners/ | Komplett durchgehen                                           |
-| Learn Docker                                                         | https://capgemini.udemy.com/course/learn-docker/ | optional: Swarm & Kubernetes                                       |
-| Dive into Cloud Native: Containers, Kubernetes & KCNA               | https://capgemini.udemy.com/course/dive-into-cloud-native-containers-kubernetes-and-the-kcna/ | Ohne Docker & Kubernetes     |
+| Terraform for the Absolute Beginners                                 | https://capgemini.udemy.com/course/terraform-for-the-absolute-beginners/ | Komplett durchgehen                                           |
+| Learn Docker                                                         | https://capgemini.udemy.com/course/learn-docker/ | komplett                                      |
+| Dive into Cloud Native: Containers, Kubernetes & KCNA                | https://capgemini.udemy.com/course/dive-into-cloud-native-containers-kubernetes-and-the-kcna/ | Ohne Docker; Kubernetes empfohlen     |
 
 ### Weitere Informationen:
 
@@ -119,7 +119,6 @@ Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Sta
 | **Docker Compose**                 | [https://docs.docker.com/compose/](https://docs.docker.com/compose/)                                  |
 | **Jenkins**                        | https://www.jenkins.io/doc/                                            |
 | **Ansible**                        | https://docs.ansible.com/                                                |
-| **WSL2 (Windows Subsystem for Linux)** | [https://learn.microsoft.com/en-us/windows/wsl/install](https://learn.microsoft.com/en-us/windows/wsl/install) |
 | **Terraform**                      | [https://developer.hashicorp.com/terraform/docs](https://developer.hashicorp.com/terraform/docs)      |
 | **Portainer**                      | https://docs.portainer.io/                                              |
 | **Prometheus**                     | https://prometheus.io/docs/introduction/overview/ |

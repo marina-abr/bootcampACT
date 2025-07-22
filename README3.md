@@ -1,6 +1,10 @@
 ## 🧪 **Use Case: PokéDelivery – Serverless Food für Pokémon**
 
-Stell dir vor, du arbeitest im Team von **PokéDelivery**, einem innovativen Start-up, das Pokémon in ganz Kanto mit frischem Sushi beliefert: natürlich serverless, resilient und CI/CD-ready. Doch um eure potentiellen Kunden für Werbemaßnahmen besser kennenzulernen (Pikachu liebt Lachs!), braucht ihr erst einmal mehr Daten über sie. Ihr gehört zu dem Team, das eine App zur Datenbeschaffung bereitstellen soll. Eure Aufgabe: Eine Plattform erstellen, mit der ihr Informationen über Pokemons abrufen könnt, mit einem Hauch von DevOps-Magie.
+Du bist Teil des PokéDelivery-Teams, einem innovativen Start-up, das Pokémon in ganz Kanto mit frischem Sushi versorgt. Die Plattform basiert auf modernen Prinzipien wie Automatisierung, Skalierbarkeit und Ausfallsicherheit.
+
+Um unsere Lieferungen noch besser auf die Vorlieben unserer Pokémon-Kundschaft abzustimmen (Pikachu liebt Lachs!), entwickeln wir eine Data Retrieval Platform. Diese Plattform soll strukturierte Informationen über Pokémon abrufen und bereitstellen. Sie bildet die Grundlage für datenbasierte Entscheidungen und personalisierte Services.
+
+Deine Aufgabe ist es, eine Anwendung zu entwickeln, die über eine standardisierte Schnittstelle Daten zu einzelnen Pokémon liefert. Die Plattform soll lokal und in der Cloud betrieben werden können, kontinuierlich getestet und automatisiert bereitgestellt werden.
 
 ---
 
@@ -10,7 +14,7 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 
 ### 1. **Systemumgebung**
 - Das System muss auf einem ARM-Gerät/VM (RaspberryPi oder B2PTS v2 VM) mit Ubuntu 22.04 LTS betrieben werden können.
-- Alle eingesetzten Softwarekomponenten (z. B. Jenkins, Docker) müssen ARM64-kompatibel sein.
+- Alle eingesetzten Softwarekomponenten müssen ARM64-kompatibel sein.
 
 ---
 
@@ -23,7 +27,7 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 ---
 
 ### 3. **Codeverwaltung**
-- Der Quellcode muss in einem zentralen Git-Repository verwaltet werden.
+- Der Quellcode muss in einem zentralen Repository verwaltet werden.
 - Es muss eine Branching-Strategie definiert und dokumentiert sein.
 - Änderungen am Code dürfen nur nach erfolgreichem Review und bestandener CI integriert werden.
 
@@ -32,6 +36,7 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 ### 4. **Continuous Integration**
 - Jede Änderung im Repository muss automatisch einen Build- und Testprozess auslösen.
 - Die CI-Pipeline muss automatisierte API-Tests ausführen.
+  - Die API-Tests sind mit einem geeigneten Tool/Bibliothek zu entwerfen und zu implementieren.
 - Die CI-Umgebung muss auf ARM64-Architektur lauffähig sein.
 
 ---
@@ -39,7 +44,12 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 ### 5. **Security & Compliance**
 - Es dürfen keine Zugangsdaten, Tokens oder Secrets im Quellcode-Repository gespeichert werden.
 - Die eingesetzten Bibliotheken müssen regelmäßig auf Sicherheitslücken geprüft und aktualisiert werden.
-- Der Zugriff auf CI/CD-Systeme (z. B. Jenkins) muss authentifiziert und rollenbasiert erfolgen.
+- Der Zugriff auf Continuous Integration Tool darf beliebig gestaltet werden (falls nicht identisch mit dem CD-System)
+- Der Zugriff auf Continuous Deployment-Systeme muss authentifiziert und rollenbasiert erfolgen.
+  - "anonyme" User dürfen gar keinen Zugriff haben.
+  - "manager" User dürfen nur lesenden Zugriff haben.
+  - "developer" User sollen vollen Zugriff aufs System haben.
+- Continuous Deployment soll mittels Jenkins erfolgen, da der Kunde dort den größten Wissensstand hat.
 
 ---
 
@@ -47,7 +57,8 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 - Jenkins muss als Docker-Container auf ARM64 lauffähig sein.
 - Die Jenkins-Konfiguration muss möglichst vollständig als Code vorliegen.
 - Es müssen mindestens zwei Jenkins-Agents auf unterschiedlichen Geräten/VMs eingerichtet werden.
-- Die Agent-Konfiguration muss automatisiert erfolgen (z. B. via Ansible).
+- Jenkins sollte keine Warnungen mehr anzeigen (Security).
+- Die Agent-Konfiguration muss automatisiert erfolgen (bevorzugt via Ansible).
 
 ---
 
@@ -61,9 +72,45 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 
 ### 8. **Deployment**
 - Die Anwendung muss über Jenkins manuell in Azure deploybar sein.
-- Das Deployment erfolgt Terraform.
+- Das Deployment erfolgt mit "Infrastructure as Code" (IaC).
 - Die Anwendung muss Metriken bereitstellen, die über Azure Application Insights analysierbar sind.
 
 ### 9. Dokumentation
 - Eine Dokumentation der Architektur soll vorliegen.
+- Entscheidungen für oder gegen bestimmte Architektur-Entscheidungen und Tools soll vorliegen.
 - Eine Entwickler Dokumentation soll vorliegen.
+
+---
+
+## Wissenswertes
+
+### Videos
+
+| 🎥 **Kursname**                                                       | 🔗 **URL**                                                                                   | 🎯 **Fokus im Bootcamp**                                      |
+|----------------------------------------------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| GitHub Actions – The Complete Guide                                  | https://capgemini.udemy.com/course/github-actions-the-complete-guide/ | Git-Crashkurs, Basics, Events                                 |
+| AZ-900: Microsoft Azure Fundamentals                                 | https://capgemini.udemy.com/course/az900-azure/ | gern komplett, Fokus auf Allgemeines Verständnis, Compute & Storage                    |
+| Jenkins Masterclass                                                  | https://capgemini.udemy.com/course/jenkins-masterclass/ | Komplett durchgehen                                           |
+| Learn Ansible                                                        | https://capgemini.udemy.com/course/learn-ansible/ | Komplett durchgehen                                           |
+| Terraform for the Absolute Beginners                                 | https://capgemini.udemy.com/course/terraform-for-the-absolute-beginners/ | Komplett durchgehen                                           |
+| Learn Docker                                                         | https://capgemini.udemy.com/course/learn-docker/ | komplett                                      |
+| Dive into Cloud Native: Containers, Kubernetes & KCNA                | https://capgemini.udemy.com/course/dive-into-cloud-native-containers-kubernetes-and-the-kcna/ | Ohne Docker; Kubernetes empfohlen     |
+
+### Weitere Informationen:
+
+| 🛠️ **Tool**                        | 🔗 **Offizielle Dokumentation / Info**                                                                 |
+|------------------------------------|--------------------------------------------------------------------------------------------------------|
+| **GitHub Actions**                 | [https://docs.github.com/en/actions](https://docs.github.com/en/actions)                              |
+| **Dependabot**                     | [https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically) |
+| **Azure Functions**                | [https://learn.microsoft.com/en-us/azure/azure-functions/](https://learn.microsoft.com/en-us/azure/azure-functions/) |
+| **Azure Functions Core Tools**     | [https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local) |
+| **Bruno (API Testing)**            | [https://github.com/usebruno/bruno](https://github.com/usebruno/bruno)                                |
+| **Docker Compose**                 | [https://docs.docker.com/compose/](https://docs.docker.com/compose/)                                  |
+| **Jenkins**                        | https://www.jenkins.io/doc/                                            |
+| **Ansible**                        | https://docs.ansible.com/                                                |
+| **Terraform**                      | [https://developer.hashicorp.com/terraform/docs](https://developer.hashicorp.com/terraform/docs)      |
+| **Portainer**                      | https://docs.portainer.io/                                              |
+| **Prometheus**                     | https://prometheus.io/docs/introduction/overview/ |
+| **Grafana**                        | https://grafana.com/docs/                                                |
+| **Azure Portal**                   | https://portal.azure.com/#home                                      |
+| **Application Insights**           | https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview |
