@@ -62,11 +62,12 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 
 ---
 
-### 7. **Monitoring & Observability**
-- Jenkins muss Metriken über einen Prometheus-kompatiblen Endpoint bereitstellen.
-- Prometheus muss diese Metriken erfassen.
-- Grafana muss ein Dashboard zur Visualisierung der CI/CD-Metriken bereitstellen.
-- Logs aller relevanten Container (Jenkins, Prometheus, Grafana) müssen über Portainer einsehbar sein.
+### 7. **Monitoring & Observierbarkeit (Tool-unabhängig)**
+
+- Jenkins muss seine eigenen Metriken bereitstellen.
+- Ein Metrik-Erfassungssystem muss diese Metriken regelmäßig abfragen und speichern.
+- Eine Visualisierungsplattform muss Dashboards zur Darstellung der Jenkins-Metriken bereitstellen.
+- Logs aller relevanten Container (einschließlich Jenkins und der Monitoring-Komponenten) müssen über eine Containerverwaltungs- oder Log-Aggregationslösung einsehbar sein.
 
 ---
 
@@ -88,13 +89,13 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 
 | 🎥 **Kursname**                                                       | 🔗 **URL**                                                                                   | 🎯 **Fokus im Bootcamp**                                      |
 |----------------------------------------------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------|
-| GitHub Actions – The Complete Guide                                  | https://capgemini.udemy.com/course/github-actions-the-complete-guide/ | Git-Crashkurs, Basics, Events                                 |
+| GitHub Actions                                                       | https://capgemini.udemy.com/course/github-actions-the-complete-guide/ | Git-Crashkurs, Basics, Events                                 |
 | AZ-900: Microsoft Azure Fundamentals                                 | https://capgemini.udemy.com/course/az900-azure/ | gern komplett, Fokus auf Allgemeines Verständnis, Compute & Storage                    |
-| Jenkins Masterclass                                                  | https://capgemini.udemy.com/course/jenkins-masterclass/ | Komplett durchgehen                                           |
-| Learn Ansible                                                        | https://capgemini.udemy.com/course/learn-ansible/ | Komplett durchgehen                                           |
-| Terraform for the Absolute Beginners                                 | https://capgemini.udemy.com/course/terraform-for-the-absolute-beginners/ | Komplett durchgehen                                           |
-| Learn Docker                                                         | https://capgemini.udemy.com/course/learn-docker/ | komplett                                      |
-| Dive into Cloud Native: Containers, Kubernetes & KCNA                | https://capgemini.udemy.com/course/dive-into-cloud-native-containers-kubernetes-and-the-kcna/ | Ohne Docker; Kubernetes empfohlen     |
+| Jenkins                                                              | https://capgemini.udemy.com/course/jenkins-masterclass/ | Komplett durchgehen                                           |
+| Ansible                                                        | https://capgemini.udemy.com/course/learn-ansible/ | Komplett durchgehen                                           |
+| Terraform                                 | https://capgemini.udemy.com/course/terraform-for-the-absolute-beginners/ | Komplett durchgehen                                           |
+| Docker                                                         | https://capgemini.udemy.com/course/learn-docker/ | komplett                                      |
+| Cloud Native, Containers, Kubernetes                | https://capgemini.udemy.com/course/dive-into-cloud-native-containers-kubernetes-and-the-kcna/ | Ohne Docker; Kubernetes empfohlen     |
 
 ### Weitere Informationen:
 
