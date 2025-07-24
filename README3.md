@@ -54,7 +54,7 @@ Das Dev Team hat bereits eine Entwicklerversion der APP auf Basis des `Requireme
 ---
 
 ### 6. **Containerisierung & Jenkins**
-- Jenkins muss als Docker-Container auf ARM64 lauffähig sein.
+- Jenkins muss als Docker-Container auf ARM64 lauffähig sein. Alle Jenkins-Daten sollen persistent gespeichert werden.
 - Die Jenkins-Konfiguration muss möglichst vollständig als Code vorliegen.
 - Es müssen mindestens zwei Jenkins-Agents auf unterschiedlichen Geräten/VMs eingerichtet werden.
 - Jenkins sollte keine Warnungen mehr anzeigen (Security).
