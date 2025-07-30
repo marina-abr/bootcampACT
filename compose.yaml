@@ -2,7 +2,7 @@ services:
   jenkins-master:
     build:
       context: ./setup/docker/jenkins
-    image: custom-jenkins:latest
+    image: jenkins/jenkins:lts-jdk17
     container_name: jenkins-master
     ports:
       - "8080:8080"
