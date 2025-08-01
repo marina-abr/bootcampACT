@@ -6,6 +6,12 @@ terraform {
       version = "~> 3.0.2"
     }
   }
+  backend "azurerm" {
+      resource_group_name  = "tfstate"
+      storage_account_name = "tfstatedemo"
+      container_name       = "tfstatecontainer"
+      key                  = "terraform.tfstate"
+  }
 
   required_version = ">= 1.1.0"
 }
@@ -15,7 +21,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "minaRG2"
+  name     = "minaRG3"
   location = "northeurope"
   tags = {
     Environment = "Terraform Getting Started"
