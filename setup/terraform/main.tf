@@ -15,7 +15,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "minaRG"
+  name     = "minaRG2"
   location = "northeurope"
   tags = {
     Environment = "Terraform Getting Started"
