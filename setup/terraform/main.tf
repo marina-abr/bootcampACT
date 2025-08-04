@@ -23,32 +23,28 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg" {
   name     = "minaRG3"
   location = "northeurope"
-  tags = {
-    Environment = "Terraform Getting Started"
-    Team = "DevOps"
-  }
 }
 
 resource "azurerm_storage_account" "sa" {
   name                     = "pokeappsa"
-  resource_group_name      = "minaRG3"
-  location                 = "northeurope"
+  resource_group_name      = azurerm_resource_group.rg.name
+  location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
 resource "azurerm_service_plan" "sp" {
   name                = "poke-app-service-plan"
-  resource_group_name = "minaRG3"
-  location            = "northeurope"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   os_type             = "Linux"
   sku_name            = "B1"
 }
 
 resource "azurerm_linux_function_app" "funcApp" {
   name                = "poke-app"
-  resource_group_name = "minaRG3"
-  location            = "northeurope"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
 
   storage_account_name       = azurerm_storage_account.sa.name
   storage_account_access_key = azurerm_storage_account.sa.primary_access_key
