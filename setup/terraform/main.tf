@@ -33,7 +33,7 @@ resource "azurerm_storage_account" "sa" {
   account_replication_type = "LRS"
   network_rules {
     bypass = "AzureServices"
-    default_action='Allow'
+    default_action="Allow"
   }
 }
 
