@@ -1,6 +1,6 @@
 variable "resource_group_name" {
   type        = string
-  default     = ""
+  default     = "MinaRGTut"
   description = "The name of the Azure resource group. If blank, a random name will be generated."
 }
 
@@ -55,7 +55,7 @@ variable "asp_name" {
 variable "fa_name" {
   description = "The name of the Function App. If blank, a random name will be generated."
   type        = string
-  default     = ""
+  default     = "MinaPokeAppTut040825"
 }
 
 variable "runtime_name" {
