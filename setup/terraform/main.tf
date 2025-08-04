@@ -33,6 +33,12 @@ resource "azurerm_storage_account" "sa" {
   account_replication_type = "LRS"
 }
 
+resource "azurerm_storage_account_network_rules" "storage-netrules" {
+  storage_account_id = azurerm_storage_account.sa.id
+
+  default_action             = "Allow"
+}
+
 resource "azurerm_service_plan" "sp" {
   name                = "poke-app-service-plan"
   resource_group_name = azurerm_resource_group.rg.name
