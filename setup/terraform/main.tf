@@ -31,13 +31,12 @@ resource "azurerm_storage_account" "sa" {
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
+  network_rules {
+    bypass = "AzureServices"
+    default_action='Allow'
+  }
 }
 
-resource "azurerm_storage_account_network_rules" "storage-netrules" {
-  storage_account_id = azurerm_storage_account.sa.id
-
-  default_action             = "Allow"
-}
 
 resource "azurerm_service_plan" "sp" {
   name                = "poke-app-service-plan"
