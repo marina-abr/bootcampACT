@@ -1,0 +1,24 @@
+meta {
+  name: getPikachu
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{URL}}/api/getPokemon?name=pikachu
+  body: none
+  auth: inherit
+}
+
+params:query {
+  name: pikachu
+}
+
+tests {
+  test("should return charmander data", function () {
+    expect(res.getStatus()).to.equal(200);
+  
+    const body = res.getBody();
+    expect(body).to.have.property("name", "pikachu");
+  });
+}
