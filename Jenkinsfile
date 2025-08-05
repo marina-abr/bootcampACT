@@ -63,8 +63,8 @@ pipeline {
             steps {
                 dir("bootcampact/test/PROD"){
                     sh '''
-                    faname=`cat ../../setup/terraform/test/outputs/faName.txt`
-                    printf "vars:pre-request { \\n URL: $faname \\n }" > collection.bru
+                    faurl=`cat ../../setup/terraform/test/outputs/fa_url.txt`
+                    printf "vars:pre-request {\\n  URL: $faurl \\n}" > collection.bru
                     '''
                     sh 'bru run --reporter-html results.html'
                     archiveArtifacts artifacts: 'results.html', fingerprint: true
