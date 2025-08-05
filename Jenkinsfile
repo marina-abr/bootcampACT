@@ -64,7 +64,7 @@ pipeline {
                 dir("bootcampact/test/PROD"){
                     sh '''
                     faname=`cat ../../setup/terraform/test/outputs/faName.txt`
-                    echo "vars:pre-request { \n URL: $faname \n }" > collection.bru
+                    printf "vars:pre-request { \\n URL: $faname \\n }" > collection.bru
                     '''
                     sh 'bru run --reporter-html results.html'
                     archiveArtifacts artifacts: 'results.html', fingerprint: true
