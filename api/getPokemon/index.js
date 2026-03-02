@@ -22,7 +22,7 @@ module.exports = async function (context, req) {
         steel: 'Sesame Roll',
         fighting: 'Protein Roll',
         flying: 'Airy Rice Ball',
-        normal: 'Classic Nigiri'
+        normal: 'Onigiri'
     };
 
     try {
